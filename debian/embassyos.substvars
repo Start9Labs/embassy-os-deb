@@ -1,3 +1,0 @@
-shlibs:Depends=libavahi-client3 (>= 0.6.16), libavahi-common3 (>= 0.6.16), libc6 (>= 2.34), libgcc-s1 (>= 4.2)
-misc:Depends=nginx, avahi-daemon, avahi-utils, iotop, bmon, lvm2, cryptsetup, exfat-utils, sqlite3, wireless-tools, net-tools, ecryptfs-utils, cifs-utils, samba-common-bin, network-manager, vim, jq, ncdu, postgresql, pgloader, openssh-server
-misc:Pre-Depends=

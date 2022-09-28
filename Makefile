@@ -11,10 +11,12 @@ embassyos-$(VERSION): $(shell find debian/)
 	rm -rf embassyos-$(VERSION)
 	git clone --depth=1 --recurse-submodules https://github.com/Start9Labs/embassy-os.git --branch=$(TAG) embassyos-$(VERSION)
 	cp -r debian embassyos-$(VERSION)/
+	cp embassyos-$(VERSION)/backend/embassyd.service embassyos-$(VERSION)/debian/embassyos.embassyd.service
+	cp embassyos-$(VERSION)/backend/embassy-init.service embassyos-$(VERSION)/debian/embassyos.embassy-init.service
 
 embassyos-$(VERSION).tar.gz: embassyos-$(VERSION)
 	rm -f embassyos-$(VERSION).tar.gz
 	tar --exclude-vcs -czf embassyos-$(VERSION).tar.gz embassyos-$(VERSION)
 
 embassyos_$(VERSION)-1_amd64.deb: embassyos-$(VERSION).tar.gz embassyos-$(VERSION)
-	cd embassyos-$(VERSION) && debmake && debuild -ePATH -eUSER -Zgzip -I
+	cd embassyos-$(VERSION) && debmake && debuild --no-lintian -ePATH -eUSER -Zgzip -I
