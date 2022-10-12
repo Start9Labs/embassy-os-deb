@@ -9,7 +9,7 @@ Homepage: https://start9.com
 Package: embassyos
 Architecture: any
 Multi-Arch: foreign
-Depends: tor, nginx, avahi-daemon, avahi-utils, iotop, bmon, lvm2, cryptsetup, exfat-utils, sqlite3, wireless-tools, net-tools, ecryptfs-utils, cifs-utils, samba-common-bin, network-manager, vim, jq, ncdu, postgresql, pgloader, openssh-server, docker-ce, docker-ce-cli, containerd.io, docker-compose-plugin, beep
+Depends: tor, nginx, avahi-daemon, avahi-utils, iotop, bmon, lvm2, cryptsetup, exfat-utils, sqlite3, wireless-tools, net-tools, ecryptfs-utils, cifs-utils, samba-common-bin, network-manager, vim, jq, ncdu, postgresql, pgloader, openssh-server, docker-ce, docker-ce-cli, containerd.io, docker-compose-plugin, beep,
   ${shlibs:Depends}
 Conflicts: openresolv, dhcpcd5, firewalld
 Description: auto-generated package by debmake
