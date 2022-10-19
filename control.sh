@@ -20,7 +20,7 @@ Homepage: https://start9.com
 Package: embassyos
 Architecture: any
 Multi-Arch: foreign
-Depends: ${DEPENDS}\${shlibs:Depends}
+Depends: ${DEPENDS},\${shlibs:Depends}
 Conflicts: ${CONFLICTS}
 Description: embassyOS Debian Package
 EOF
