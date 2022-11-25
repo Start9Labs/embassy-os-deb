@@ -1,4 +1,4 @@
-VERSION = 0.3.2
+VERSION = 0.3.x
 TAG = v$(VERSION)
 
 all: embassyos_$(VERSION)-1_amd64.deb
