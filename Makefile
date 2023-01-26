@@ -21,4 +21,4 @@ embassyos-$(VERSION).tar.gz: embassyos-$(VERSION)
 	tar --exclude-vcs -czf embassyos-$(VERSION).tar.gz embassyos-$(VERSION)
 
 embassyos_$(VERSION)-1_amd64.deb: embassyos-$(VERSION).tar.gz embassyos-$(VERSION)
-	cd embassyos-$(VERSION) && debmake && DEB_BUILD_OPTIONS="parallel=1" debuild --no-lintian -ePATH -eUSER -Zgzip -I
+	cd embassyos-$(VERSION) && debmake && DEB_BUILD_OPTIONS="parallel=1" debuild --no-lintian -eENVIRONMENT -ePATH -eUSER -Zgzip -I
