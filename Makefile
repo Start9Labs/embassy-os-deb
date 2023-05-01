@@ -1,7 +1,7 @@
 VERSION = 0.3.x
 TAG = v$(VERSION)
 OS_ARCH := $(shell if [ -n "${OS_ARCH}" ]; then echo "${OS_ARCH}"; else uname -m; fi)
-ARCH := $(shell if [ "$(OS_ARCH)" = "x86_64" ]; then echo amd64; elif [ "$(OS_ARCH)" = "aarch64" ] || [ "$(OS_ARCH)" = "raspberrypi" ]; then echo arm64; else echo "$(OS_ARCH)"; fi)
+ARCH := $(shell if [ "$(OS_ARCH)" = "x86_64" ] || [ "$(OS_ARCH)" = "x86_64-nonfree" ]; then echo amd64; elif [ "$(OS_ARCH)" = "aarch64" ] || [ "$(OS_ARCH)" = "aarch64-nonfree" ] || [ "$(OS_ARCH)" = "raspberrypi" ]; then echo arm64; else echo "$(OS_ARCH)"; fi)
 
 
 all: embassyos_$(VERSION)-1_$(ARCH).deb
