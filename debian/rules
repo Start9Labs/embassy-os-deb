@@ -10,5 +10,8 @@ override_dh_installsystemd:
 	dh_installsystemd --name=embassy-init --no-start
 	dh_installsystemd --name=embassyd --no-start
 
+override_dh_shlibdeps:
+	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
+
 %:
 	dh $@
