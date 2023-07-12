@@ -15,8 +15,7 @@ embassyos-$(VERSION): $(shell find debian/)
 	git clone --depth=1 --recurse-submodules https://github.com/Start9Labs/embassy-os.git --branch=$(TAG) embassyos-$(VERSION)
 	cp -r debian embassyos-$(VERSION)/
 	VERSION=$(VERSION) ./control.sh
-	cp embassyos-$(VERSION)/backend/embassyd.service embassyos-$(VERSION)/debian/embassyos.embassyd.service
-	cp embassyos-$(VERSION)/backend/embassy-init.service embassyos-$(VERSION)/debian/embassyos.embassy-init.service
+	cp embassyos-$(VERSION)/backend/startd.service embassyos-$(VERSION)/debian/embassyos.startd.service
 
 embassyos-$(VERSION).tar.gz: embassyos-$(VERSION)
 	cd embassyos-$(VERSION) && make clean
